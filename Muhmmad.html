@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+    function animateNumbers() {
+        const counters = document.querySelectorAll('.counter');
+        const duration = 2000; // 2 seconds (milliseconds mein)
+
+        counters.forEach(counter => {
+            const target = +counter.getAttribute('data-target');
+            let startTime = null;
+
+            function step(timestamp) {
+                if (!startTime) startTime = timestamp;
+                const progress = timestamp - startTime;
+                
+                const percentage = Math.min(progress / duration, 1);
+                
+                counter.innerText = Math.floor(percentage * target);
+
+                if (progress < duration) {
+                    window.requestAnimationFrame(step);
+                } else {
+                    counter.innerText = target; 
+                }
+            }
+
+            window.requestAnimationFrame(step);
+        });
+    }
+
+    window.addEventListener('DOMContentLoaded', animateNumbers);
+</script>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; background-color: #000; color: #fff; scroll-behavior: smooth; }
+        .bg-grid {
+            background-image: linear-gradient(to right, #111 1px, transparent 1px), linear-gradient(to bottom, #111 1px, transparent 1px);
+            background-size: 40px 40px;
+        }
+        .glow-green { box-shadow: 0 0 20px rgba(16, 185, 129, 0.2); }
+    </style>
+</head>
+
+<body class="bg-grid">
+
+    <nav class="sticky top-0 z-50 bg-black/80 backdrop-blur-md border-b border-white/5">
+    <div class="max-w-6xl mx-auto px-[50px] py-4 flex justify-between items-center">
+    <div class="flex gap-8 text-sm font-medium text-gray-400">
+        <a href="#" class="hover:text-white transition">Home</a>
+        <a href="#" class="hover:text-white transition">Projects</a>
+        <a href="#" class="hover:text-white transition">Blog</a>
+        <a href="#" class="hover:text-white transition">Certificate</a>
+    </div>
+    <div class="font-bold text-xl tracking-tighter">R</div>
+    </div>
+    </nav>
+
+    <section class="max-w-6xl mx-auto px-[50px] pt-20 pb-32 flex flex-col md:flex-row items-center relative overflow-hidden">
+    <div class="absolute top-0 left-0 w-96 h-96 bg-emerald-500/10 blur-[120px] rounded-full -z-10"></div>
+        
+    <div class="md:w-3/5">
+    <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-emerald-500/10 border border-emerald-500/20 text-emerald-400 text-[10px] font-bold uppercase tracking-widest mb-8">
+        <span class="w-2 h-2 bg-emerald-500 rounded-full animate-pulse"></span>
+                Available for new projects
+         </div>
+        <p class="text-zinc-500 mb-2 font-mono">Muhmmad.codes</p>
+        <h1 class="text-5xl md:text-7xl font-bold mb-6 tracking-tight">Muhmmad T. Majeed</h1>
+        <p class="text-zinc-400 text-lg leading-relaxed max-w-xl mb-10">
+                I'm a software developer passionate about web development. I use <span class="text-white">Laravel, Next.js, Hono.js</span>, and <span class="text-white">Tailwind CSS</span> to build fast, maintainable, and production-ready web applications.
+        </p>
+            
+        <div class="flex gap-4 mb-16">
+            
+            <button class="bg-white text-black px-8 py-3 rounded-lg font-bold hover:bg-zinc-200 transition">View Projects</button>
+
+            <button class="border border-zinc-800 px-8 py-3 rounded-lg font-bold hover:bg-zinc-900 transition flex items-center gap-2">
+
+                    Blog <span>→</span>
+            </button>
+        </div>
+
+        <div class="flex gap-12 border-t border-zinc-900 pt-8">
+            <div>
+                <p class="text-[10px] text-zinc-500 uppercase tracking-widest mb-1">Experience</p>
+                <p class="text-xl font-bold"><span class="counter" data-target="10">0</span>+ years</p>
+            </div>
+            <div>
+                <p class="text-[10px] text-zinc-500 uppercase tracking-widest mb-1">Projects</p>
+                <p class="text-xl font-bold"><span class="counter" data-target="20">0</span>+ shipped</p>
+            </div>
+            <div>
+                <p class="text-[10px] text-zinc-500 uppercase tracking-widest mb-1">Focus</p>
+                <p class="text-xl font-bold">Web Fullstack</p>
+            </div>
+            </div>
+        </div>
+
+        <div class="md:w-2/5 mt-12 md:mt-0 relative">
+
+            <img src="Downloads/laptopcodehand.webp" alt="Laptop illustration" class="w-full opacity-80">
+
+        </div>
+    </section>
+
+   <section class="max-w-6xl mx-auto px-6 py-20">
+
+    <div class="flex justify-between items-end mb-12">
+        <div>
+            <p class="text-xs text-zinc-500 uppercase tracking-widest mb-2 font-bold">Featured Work</p>
+            <h2 class="text-4xl font-bold text-white">Selected projects</h2>
+        </div>
+        <a href="#" class="text-sm text-zinc-400 hover:text-white transition">See all projects →</a>
+    </div>
+
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+         <div class="group bg-[#0c0c0c] border border-emerald-500/20 rounded-[2.5rem] overflow-hidden hover:border-emerald-500 transition-all duration-500">
+           
+            <div class="p-4 pb-0">
+                <div class="h-60 w-full bg-zinc-900 rounded-[1.8rem] overflow-hidden border border-emerald-500/10 relative">
+                    <img src="Downloads/Code is like Road, you must know where you`re going_.jfif">
+                </div>
+            </div>
+        
+            <div class="p-8 pt-6 flex justify-between items-end">
+                <div>
+                    <h3 class="text-2xl font-bold text-emerald-400 mb-1">World Coder</h3>
+                    <p class="text-zinc-500 text-sm font-medium">Secure zero-knowledge authenticator</p>
+                </div>
+                <!-- Circular Green Button -->
+                <div class="w-12 h-12 rounded-full border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-black transition-all duration-300">
+                    <span class="text-xl">→</span>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="group bg-[#0c0c0c] border border-emerald-500/20 rounded-[2.5rem] overflow-hidden hover:border-emerald-500 transition-all duration-500">
+        
+            <div class="p-4 pb-0">
+                <div class="h-60 w-full bg-zinc-900 rounded-[1.8rem] overflow-hidden border border-emerald-500/10 relative">
+                    <img src="Downloads/874120608910814332.jfif">
+                </div>
+            </div>
+     
+            <div class="p-8 pt-6 flex justify-between items-end">
+                <div>
+                    <h3 class="text-2xl font-bold text-emerald-400 mb-1">Study </h3>
+                    <p class="text-zinc-500 text-sm font-medium">Secure zero-knowledge authenticator</p>
+                </div>
+              
+                <div class="w-12 h-12 rounded-full border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-black transition-all duration-300">
+                    <span class="text-xl">→</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="group bg-[#0c0c0c] border border-emerald-500/20 rounded-[2.5rem] overflow-hidden hover:border-emerald-500 transition-all duration-500">
+        
+            <div class="p-4 pb-0">
+                <div class="h-60 w-full bg-zinc-900 rounded-[1.8rem] overflow-hidden border border-emerald-500/10 relative">
+                    <img src="Downloads/hacker.jfif">
+                </div>
+            </div>
+    
+            <div class="p-8 pt-6 flex justify-between items-end">
+                <div>
+                    <h3 class="text-2xl font-bold text-emerald-400 mb-1">hacker</h3>
+                    <p class="text-zinc-500 text-sm font-medium">Secure zero-knowledge authenticator</p>
+                </div>
+
+                <div class="w-12 h-12 rounded-full border border-emerald-500/30 flex items-center justify-center text-emerald-400 group-hover:bg-emerald-500 group-hover:text-black transition-all duration-300">
+                    <span class="text-xl">→</span>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+   
+    <section class="max-w-6xl mx-auto px-[50px] py-20">
+        <div class="flex justify-between items-end mb-12">
+            <div>
+            <p class="text-xs text-zinc-500 uppercase tracking-widest mb-2 font-bold">Experience</p>
+            <h2 class="text-4xl font-bold">Recent professional timeline</h2>
+            </div>
+            <a href="#" class="text-sm text-zinc-400 hover:text-white transition">View resume →</a>
+        </div>
+        <div class="space-y-4">
+<div class="group bg-[#0d0d0d]/50 border border-zinc-800/50 p-8 rounded-2xl flex items-start gap-12 hover:border-zinc-700 hover:bg-[#0d0d0d] transition-all duration-300">
+    
+    
+    <div class="flex items-center gap-4 w-56 shrink-0 pt-1">
+        <div class="relative flex items-center justify-center">
+            <span class="w-2 h-2 bg-emerald-500 rounded-full z-10"></span>
+    
+            <span class="absolute w-2 h-2 bg-emerald-500 rounded-full blur-[4px] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+        </div>
+        <span class="text-xs font-medium text-zinc-500 tracking-wide uppercase">Januari 2023 - Mei 2024</span>
+    </div>
+
+    <div class="space-y-1">
+        <h4 class="text-xl font-bold text-white tracking-tight group-hover:text-emerald-400 transition-colors">Frontend Developer</h4>
+        <p class="text-sm font-medium text-zinc-400">PT. Klik Digital Indonesia</p>
+        
+        <p class="text-sm text-zinc-500 mt-4 leading-relaxed max-w-xl">
+            Developed the CSAI product platform at app.csai.id.
+        </p>
+    </div>
+</div>
+
+
+<div class="group bg-[#0d0d0d]/50 border border-zinc-800/50 p-8 rounded-2xl flex items-start gap-12 hover:border-zinc-700 hover:bg-[#0d0d0d] transition-all duration-300">
+    
+
+    <div class="flex items-center gap-4 w-56 shrink-0 pt-1">
+    
+        <div class="relative flex items-center justify-center">
+            <span class="w-2 h-2 bg-emerald-500 rounded-full z-10"></span>
+    
+            <span class="absolute w-2 h-2 bg-emerald-500 rounded-full blur-[4px] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+        </div>
+        <span class="text-xs font-medium text-zinc-500 tracking-wide uppercase">Januari 2023 - Mei 2024</span>
+    </div>
+
+    <div class="space-y-1">
+        <h4 class="text-xl font-bold text-white tracking-tight group-hover:text-emerald-400 transition-colors">Frontend Developer</h4>
+        <p class="text-sm font-medium text-zinc-400">PT. Klik Digital Indonesia</p>
+        
+        <p class="text-sm text-zinc-500 mt-4 leading-relaxed max-w-xl">
+            Developed the CSAI product platform at app.csai.id.
+        </p>
+    </div>
+</div>
+
+
+<div class="group bg-[#0d0d0d]/50 border border-zinc-800/50 p-8 rounded-2xl flex items-start gap-12 hover:border-zinc-700 hover:bg-[#0d0d0d] transition-all duration-300">
+    
+
+    <div class="flex items-center gap-4 w-56 shrink-0 pt-1">
+    
+        <div class="relative flex items-center justify-center">
+            <span class="w-2 h-2 bg-emerald-500 rounded-full z-10"></span>
+        
+            <span class="absolute w-2 h-2 bg-emerald-500 rounded-full blur-[4px] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+        </div>
+        <span class="text-xs font-medium text-zinc-500 tracking-wide uppercase">Januari 2023 - Mei 2024</span>
+    </div>
+
+    <div class="space-y-1">
+        <h4 class="text-xl font-bold text-white tracking-tight group-hover:text-emerald-400 transition-colors">Frontend Developer</h4>
+        <p class="text-sm font-medium text-zinc-400">PT. Klik Digital Indonesia</p>
+        
+        <p class="text-sm text-zinc-500 mt-4 leading-relaxed max-w-xl">
+            Developed the CSAI product platform at app.csai.id.
+        </p>
+    </div>
+</div>
+
+
+<div class="group bg-[#0d0d0d]/50 border border-zinc-800/50 p-8 rounded-2xl flex items-start gap-12 hover:border-zinc-700 hover:bg-[#0d0d0d] transition-all duration-300">
+    
+
+    <div class="flex items-center gap-4 w-56 shrink-0 pt-1">
+    
+        <div class="relative flex items-center justify-center">
+            <span class="w-2 h-2 bg-emerald-500 rounded-full z-10"></span>
+        
+            <span class="absolute w-2 h-2 bg-emerald-500 rounded-full blur-[4px] opacity-0 group-hover:opacity-100 transition-opacity"></span>
+        </div>
+        <span class="text-xs font-medium text-zinc-500 tracking-wide uppercase">Januari 2023 - Mei 2024</span>
+    </div>
+
+    <div class="space-y-1">
+        <h4 class="text-xl font-bold text-white tracking-tight group-hover:text-emerald-400 transition-colors">Frontend Developer</h4>
+        <p class="text-sm font-medium text-zinc-400">PT. Klik Digital Indonesia</p>
+        
+        <p class="text-sm text-zinc-500 mt-4 leading-relaxed max-w-xl">
+            Developed the CSAI product platform at app.csai.id.
+        </p>
+    </div>
+</div>
+
+        </div>
+    </section>
+
+
+    <section class="max-w-6xl mx-auto px-[50px] py-20">
+    <p class="text-xs text-zinc-500 uppercase tracking-widest mb-2 font-bold">Tech Stack</p>
+    <h2 class="text-4xl font-bold mb-10 text-white">Tools I use to ship web applications</h2>
+    
+    <div class="flex flex-wrap gap-3">
+        
+        <span class="bg-zinc-900 border border-zinc-800 px-8 py-2 rounded-lg text-lg text-zinc-400 flex items-center gap-2 transition-all duration-300 hover:border-zinc-400 hover:text-white hover:-translate-y-1 cursor-default group">
+            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full group-hover:shadow-[0_0_8px_#10b981]"></span> 
+            Next.js
+        </span>
+
+        <span class="bg-zinc-900 border border-zinc-800 px-8 py-2 rounded-lg text-lg text-zinc-400 flex items-center gap-2 transition-all duration-300 hover:border-zinc-400 hover:text-white hover:-translate-y-1 cursor-default group">
+            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full group-hover:shadow-[0_0_8px_#10b981]"></span> 
+            Laravel
+        </span>
+
+        <span class="bg-zinc-900 border border-zinc-800 px-8 py-2 rounded-lg text-lg text-zinc-400 flex items-center gap-2 transition-all duration-300 hover:border-zinc-400 hover:text-white hover:-translate-y-1 cursor-default group">
+            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full group-hover:shadow-[0_0_8px_#10b981]"></span> 
+            TailwindCSS
+        </span>
+
+        <span class="bg-zinc-900 border border-zinc-800 px-8 py-2 rounded-lg text-lg text-zinc-400 flex items-center gap-2 transition-all duration-300 hover:border-zinc-400 hover:text-white hover:-translate-y-1 cursor-default group">
+            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full group-hover:shadow-[0_0_8px_#10b981]"></span> 
+            Docker
+        </span>
+
+        <span class="bg-zinc-900 border border-zinc-800 px-8 py-2 rounded-lg text-lg text-zinc-400 flex items-center gap-2 transition-all duration-300 hover:border-zinc-400 hover:text-white hover:-translate-y-1 cursor-default group">
+            <span class="w-1.5 h-1.5 bg-emerald-500 rounded-full group-hover:shadow-[0_0_8px_#10b981]"></span> 
+            PostgreSQL
+        </span>
+
+    </div>
+</section>
+
+
+    <section class="max-w-6xl mx-auto px-[50px] py-20">
+        <div class="bg-emerald-500/5 border border-emerald-200/20 p-12 rounded-[2rem] flex flex-col md:flex-row justify-between items-center relative overflow-hidden">
+            <div class="absolute top-0 right-0 w-64 h-64 bg-emerald-500/10 blur-[80px] -z-10"></div>
+            <div class="max-w-xl text-center md:text-left">
+                <h2 class="text-4xl font-bold mb-4">Have an idea, project, or collaboration in mind?</h2>
+                <p class="text-zinc-400 mb-8">I build websites, dashboards, and APIs — mostly for clients, sometimes for myself when an idea won't leave me alone.</p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <span class="text-[13px] uppercase font-bold text-zinc-500 flex items-center gap-2 border border-zinc-800 px-2 py-1 rounded">● Full-stack web apps</span>
+                    <span class="text-[10px] uppercase font-bold text-zinc-500 flex items-center gap-2 border border-zinc-800 px-2 py-1 rounded">● Cloud deployment</span>
+                </div>
+            </div>
+            <div class="mt-10 md:mt-0 text-center">
+                <button class="bg-white text-black px-10 py-4 rounded-xl font-bold hover:scale-105 transition shadow-xl shadow-white/10 mb-4">✉ Email me</button>
+                <div class="text-[10px] text-zinc-500 uppercase font-bold tracking-widest">Usually replies within 24 hours</div>
+            </div>
+        </div>
+    </section>
+
+
+    <footer class="max-w-6xl mx-auto px-[50px] py-20 relative  border-zinc-900 mt-20">
+        <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-20">
+            <div class="col-span-1 md:col-span-1">
+                <div class="w-12 h-12 bg-zinc-800 rounded-full mb-6">
+                    <img src="Downloads/laptopcodehand.webp" alt="">
+                </div>
+                <h4 class="font-bold mb-2">Muhmmad T. Majeed</h4>
+                <p class="text-xs text-zinc-500 leading-relaxed">A full-stack developer who builds dashboards, APIs, and the occasional weekend bot.</p>
+            </div>
+            <div>
+                <h5 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-6">Index</h5>
+                <ul class="text-sm space-y-4 text-zinc-400">
+                    <li><a href="#" class="hover:text-white transition">Home</a></li>
+                    <li><a href="#" class="hover:text-white transition">Projects</a></li>
+                    <li><a href="#" class="hover:text-white transition">Blog</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-xs font-bold uppercase tracking-widest text-zinc-500 mb-6">Support me</h5>
+                <div class="flex flex-col gap-3">
+                    <button class="bg-zinc-900 border border-zinc-800 text-[10px] py-3 px-4 rounded-lg text-left font-bold hover:bg-zinc-800">🍵 Nih buat jajan</button>
+                    <button class="bg-zinc-900 border border-zinc-800 text-[10px] py-3 px-4 rounded-lg text-left font-bold hover:bg-zinc-800">☕ Buy me a coffee</button>
+                </div>
+            </div>
+        </div>
+        <div class="flex flex-col md:flex-row justify-between items-center text-[10px] text-zinc-600 font-bold tracking-widest">
+            <p>© COPYRIGHT 2022 — 2024 REZKY.CODES. ALL RIGHTS RESERVED.</p>
+            <div class="flex gap-6 mt-4 md:mt-0">
+                <span class="hover:text-white cursor-pointer">THREADS</span>
+                <span class="hover:text-white cursor-pointer">INSTAGRAM</span>
+                <span class="hover:text-white cursor-pointer">GITHUB</span>
+            </div>
+        </div>
+    
+       <div class="absolute bottom-0 left-0 right-0 text-center -z-20 opacity-5 pointer-events-none">
+    <h1 class="text-[15rem] font-bold tracking-tighter leading-none select-none italic -rotate-3 transform">Muhmmad</h1>
+</div>
+    </footer>
+
+</body>
+</html>
